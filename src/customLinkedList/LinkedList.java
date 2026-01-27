@@ -71,6 +71,29 @@ public class LinkedList {
         temp.next = null;
     }
 
+    // deleteByValue
+    public void deleteByValue(int value){
+        if (head == null){
+            return;
+        }
+        if (head.data == value){
+            head = head.next;
+            return;
+        }
+
+        Node temp = head;
+        while (temp.next != null &&  temp.next.data != value){
+            temp = temp.next;
+        }
+
+        if (temp.next == null){
+            System.out.println("Value not found");
+        }
+        else {
+            temp.next = temp.next.next;
+        }
+    }
+
     // search
     public void search(int key){
         if (head == null){
